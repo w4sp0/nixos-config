@@ -1,5 +1,5 @@
 {
-  description = "Ryan Yin's nix configuration for both NixOS & macOS";
+  description = "Nix configuration for macOS";
 
   ##################################################################################################################
   #
@@ -43,8 +43,6 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-2505.url = "github:nixos/nixpkgs/nixos-25.05";
 
-    # nixpkgs with some custom patches
-    nixpkgs-patched.url = "github:ryan4yin/nixpkgs/nixos-unstable-patched";
     # get some latest packages from the master branch
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
@@ -122,10 +120,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ghostty = {
-      url = "github:ghostty-org/ghostty/tip"; # Latest Continuous Release
-    };
-
     blender-bin = {
       url = "github:edolstra/nix-warez?dir=blender";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -134,13 +128,6 @@
     nixos-apple-silicon = {
       # asahi-6.18.9
       url = "github:nix-community/nixos-apple-silicon";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    helix = {
-      # Helix with steel as plugin system
-      # https://github.com/helix-editor/helix/pull/8675
-      url = "github:mattwparas/helix/steel-event-system";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -161,33 +148,16 @@
     ########################  Some non-flake repositories  #########################################
 
     nu_scripts = {
-      url = "github:ryan4yin/nu_scripts";
+      url = "github:nushell/nu_scripts";
       flake = false;
     };
 
     ########################  My own repositories  #########################################
 
-    # my private secrets, it's a private repository, you need to replace it with your own.
-    # use ssh protocol to authenticate via ssh-agent/ssh-key, and shallow clone to save time
-    mysecrets = {
-      url = "git+ssh://git@github.com/ryan4yin/nix-secrets.git?shallow=1";
-      flake = false;
-    };
-
-    my-asahi-firmware = {
-      url = "git+ssh://git@github.com/ryan4yin/asahi-firmware.git?shallow=1";
-      flake = false;
-    };
-
-    # my wallpapers
-    wallpapers = {
-      url = "github:ryan4yin/wallpapers";
-      flake = false;
-    };
-
-    nur-ryan4yin = {
-      url = "github:ryan4yin/nur-packages";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # TODO: Replace with your own private secrets repository
+    # mysecrets = {
+    #   url = "git+ssh://git@github.com/YOUR_USER/nix-secrets.git?shallow=1";
+    #   flake = false;
+    # };
   };
 }

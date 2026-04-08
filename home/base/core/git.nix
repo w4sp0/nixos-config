@@ -27,18 +27,6 @@
     #   signByDefault = true;
     # };
 
-    includes = [
-      {
-        # use different email & name for work:
-        #
-        # [user]
-        #   email = "xxx@xxx.com"
-        #   name = "Ryan Yin"
-        path = "~/work/.gitconfig";
-        condition = "gitdir:~/work/";
-      }
-    ];
-
     settings = {
       user.email = myvars.useremail;
       user.name = myvars.userfullname;
@@ -48,16 +36,6 @@
       push.autoSetupRemote = true;
       pull.rebase = true;
       log.date = "iso"; # use iso format for date
-
-      # replace https with ssh
-      url = {
-        "ssh://git@github.com/ryan4yin" = {
-          insteadOf = "https://github.com/ryan4yin";
-        };
-        # "ssh://git@bitbucket.com/ryan4yin" = {
-        #   insteadOf = "https://bitbucket.com/ryan4yin";
-        # };
-      };
 
       alias = {
         # common aliases

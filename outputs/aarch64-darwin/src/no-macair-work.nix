@@ -11,7 +11,7 @@
   ...
 }@args:
 let
-  name = "fern";
+  name = "no-macair-work";
 
   modules = {
     darwin-modules =

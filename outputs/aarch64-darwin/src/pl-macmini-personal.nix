@@ -11,7 +11,7 @@
   ...
 }@args:
 let
-  name = "frieren";
+  name = "pl-macmini-personal";
 
   modules = {
     darwin-modules =
@@ -27,6 +27,7 @@ let
           modules.desktop.fonts.enable = true;
         }
       ];
+
     home-modules = map mylib.relativeToRoot [
       "home/hosts/darwin/darwin-${name}.nix"
     ];

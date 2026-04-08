@@ -50,9 +50,6 @@ in
       # https://github.com/lxgw/LxgwWenKai-Screen
       lxgw-wenkai-screen
 
-      # Maple Mono NF CN (连字 未微调版，适用于高分辨率屏幕)
-      # Full version, embed with nerdfonts icons, Chinese and Japanese glyphs
-      # https://github.com/subframe7536/maple-font
-      maple-mono.NF-CN-unhinted
+      source-code-pro
     ];
 }

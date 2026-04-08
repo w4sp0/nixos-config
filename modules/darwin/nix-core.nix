@@ -26,7 +26,8 @@
 
   system.stateVersion = 5;
 
-  nix.extraOptions = ''
-    !include ${config.age.secrets.nix-access-tokens.path}
-  '';
+  # TODO: Uncomment once you set up agenix secrets with a nix-access-tokens secret
+  # nix.extraOptions = ''
+  #   !include ${config.age.secrets.nix-access-tokens.path}
+  # '';
 }

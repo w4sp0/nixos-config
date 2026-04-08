@@ -1,30 +1,16 @@
 {
   config,
-  mysecrets,
   ...
 }:
 {
   programs.gpg = {
     enable = true;
     homedir = "${config.home.homeDirectory}/.gnupg";
-    #  $GNUPGHOME/trustdb.gpg stores all the trust level you specified in `programs.gpg.publicKeys` option.
-    #
-    # If set `mutableTrust` to false, the path $GNUPGHOME/trustdb.gpg will be overwritten on each activation.
-    # Thus we can only update trsutedb.gpg via home-manager.
-    mutableTrust = false;
+    mutableTrust = true;
+    mutableKeys = true;
+    # TODO: Add your own GPG public keys here
+    # publicKeys = [ ];
 
-    # $GNUPGHOME/pubring.kbx stores all the public keys you specified in `programs.gpg.publicKeys` option.
-    #
-    # If set `mutableKeys` to false, the path $GNUPGHOME/pubring.kbx will become an immutable link to the Nix store, denying modifications.
-    # Thus we can only update pubring.kbx via home-manager
-    mutableKeys = false;
-    publicKeys = [
-      # https://www.gnupg.org/gph/en/manual/x334.html
-      {
-        source = "${mysecrets}/public/ryan4yin-gpg-keys-2014-01-27.pub";
-        trust = 5;
-      } # ultimate trust, my own keys.
-    ];
 
     # This configuration is based on the tutorial below, it allows for a robust setup
     # https://blog.eleven-labs.com/en/openpgp-almost-perfect-key-pair-part-1

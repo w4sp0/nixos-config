@@ -17,7 +17,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "Maple Mono NF CN";
+      name = "Source Code Pro";
       # use different font size on macOS
       size = 13;
     };

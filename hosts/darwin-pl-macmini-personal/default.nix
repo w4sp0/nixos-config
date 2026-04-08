@@ -1,11 +1,11 @@
 _:
 #############################################################
 #
-#  Fern - MacBook Pro 2024 14-inch M4 Pro 48G, mainly for business.
+#  pl-macmini-personal - Mac Mini M1 (Personal)
 #
 #############################################################
 let
-  hostname = "frieren";
+  hostname = "pl-macmini-personal";
 in
 {
   networking.hostName = hostname;
