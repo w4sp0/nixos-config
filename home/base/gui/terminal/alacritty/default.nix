@@ -1,10 +1,14 @@
 {
+  config,
   pkgs,
   ...
 }:
 ###########################################################
 #
 # Alacritty Configuration
+#
+# Palette and font come from `config.mytheme` — see
+# `home/base/core/theme/default.nix`. Toggle light/dark with `theme-switch`.
 #
 # Useful Hot Keys for macOS:
 #   1. Multi-Window: `command + N`
@@ -22,6 +26,9 @@
 # Note: Alacritty do not have support for Tabs, and any graphic protocol.
 #
 ###########################################################
+let
+  c = config.mytheme.colors;
+in
 {
   catppuccin.alacritty.enable = false;
 
@@ -41,43 +48,51 @@
       };
       font = {
         bold = {
-          family = "Source Code Pro";
+          family = config.mytheme.font;
         };
         italic = {
-          family = "Source Code Pro";
+          family = config.mytheme.font;
         };
         normal = {
-          family = "Source Code Pro";
+          family = config.mytheme.font;
         };
         bold_italic = {
-          family = "Source Code Pro";
+          family = config.mytheme.font;
         };
         size = 13;
       };
       colors = {
         primary = {
-          background = "#FFFFFF";
-          foreground = "#2E3436";
+          background = c.bg;
+          foreground = c.fg;
+        };
+        cursor = {
+          cursor = c.cursor;
+          text = c.bg;
+        };
+        selection = {
+          background = c.selection_bg;
+          text = c.selection_fg;
         };
         normal = {
-          black = "#2E3436";
-          red = "#CC0000";
-          green = "#4E9A06";
-          yellow = "#C4A000";
-          blue = "#3465A4";
-          magenta = "#75507B";
-          cyan = "#06989A";
-          white = "#D3D7CF";
+          black = c.ansi.black;
+          red = c.ansi.red;
+          green = c.ansi.green;
+          yellow = c.ansi.yellow;
+          blue = c.ansi.blue;
+          magenta = c.ansi.magenta;
+          cyan = c.ansi.cyan;
+          white = c.ansi.white;
         };
         bright = {
-          black = "#555753";
-          red = "#EF2929";
-          green = "#8AE234";
-          yellow = "#FCE94F";
-          blue = "#729FCF";
-          magenta = "#AD7FA8";
-          cyan = "#34E2E2";
-          white = "#EEEEEC";
+          black = c.ansi.brBlack;
+          red = c.ansi.brRed;
+          green = c.ansi.brGreen;
+          yellow = c.ansi.brYellow;
+          blue = c.ansi.brBlue;
+          magenta = c.ansi.brMagenta;
+          cyan = c.ansi.brCyan;
+          white = c.ansi.brWhite;
         };
       };
       terminal = {

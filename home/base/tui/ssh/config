@@ -1,0 +1,37 @@
+# SPDX-FileCopyrightText: 2023 - 2024 Benjamin Grande M. S. <ben.grande.b@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# vim: ft=sshconfig
+
+## Security configuration is enforced.
+Host *
+        ## Distrust the remote
+        ForwardX11 no
+        ForwardX11Trusted no
+        ForwardAgent no
+        ## Authentication
+        UpdateHostKeys ask
+        PreferredAuthentications publickey,keyboard-interactive,password
+        HostbasedAuthentication no
+        StrictHostKeyChecking yes
+        ## Encryption
+        HostKeyAlgorithms sk-ssh-ed25519@openssh.com,ssh-ed25519
+        PubkeyAcceptedAlgorithms sk-ssh-ed25519@openssh.com,ssh-ed25519
+        KexAlgorithms sntrup761x25519-sha512,sntrup761x25519-sha512@openssh.com,curve25519-sha256,curve25519-sha256@libssh.org
+        Ciphers aes256-gcm@openssh.com
+        MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com
+
+## Load host configuration.
+UserKnownHostsFile ~/.ssh/known_hosts.d/%k.host ~/.ssh/known_hosts.d/%h.host
+Include ~/.ssh/config.d/*.conf
+
+## Recommended configuration at last.
+Host *
+        ## Connectivity
+        ControlMaster auto
+        ControlPath ~/.ssh/control.d/%r@%h:%p
+        ControlPersist 60s
+
+## Only try fancy Qubes proxy if qube has compatible service enabled.
+Match Exec "test -f /var/run/qubes-service/qusal-proxy-client"
+        ProxyCommand qrexec-client-vm @default qusal.ConnectTCP+%h+%p

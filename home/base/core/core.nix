@@ -35,11 +35,18 @@
     icons = "auto";
   };
 
+  # Disable catppuccin's bat theme; we use bat's built-in "ansi" theme so
+  # highlighting inherits whatever ANSI palette the terminal is using.
+  catppuccin.bat.enable = false;
+
   # a cat(1) clone with syntax highlighting and Git integration.
   programs.bat = {
     enable = true;
     config = {
       pager = "less -FR";
+      # "ansi" is a built-in bat theme that uses only terminal ANSI colors,
+      # so bat automatically follows the active tango-{light,dark} palette.
+      theme = "ansi";
     };
   };
 

@@ -33,6 +33,8 @@
     yt-dlp # youtube/bilibili/soundcloud/... video/music downloader
 
     # misc
+    mise # polyglot dev tool manager
+    claude-code # anthropic's CLI for Claude
     devbox
     bfg-repo-cleaner # remove large files from git history
     k6 # load testing tool
