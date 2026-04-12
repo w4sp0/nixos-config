@@ -6,7 +6,7 @@
     user = "gitea";
     group = "gitea";
     stateDir = "/data/apps/gitea";
-    appName = "Ryan Yin's Gitea Service";
+    appName = "Wassp's Gitea Service";
     lfs.enable = true;
     # Enable a timer that runs gitea dump to generate backup-files of the current gitea database and repositories.
     dump = {
@@ -24,7 +24,7 @@
         HTTP_PORT = 3301;
         HTTP_ADDR = "127.0.0.1";
         DOMAIN = "git.writefor.fun";
-        ROOT_URL = "https://git.writefor.fun/";
+        ROOT_URL = "https://git.wassp.dev/";
       };
       # one of "Trace", "Debug", "Info", "Warn", "Error", "Critical"
       log.LEVEL = "Info";
@@ -48,7 +48,7 @@
       mailer = {
         ENABLED = true;
         MAILER_TYPE = "sendmail";
-        FROM = "do-not-reply@writefor.fun";
+        FROM = "do-not-reply@wassp.dev";
         SENDMAIL_PATH = "${pkgs.system-sendmail}/bin/sendmail";
       };
       other = {
@@ -62,7 +62,7 @@
     };
   };
 
-  # services.gitea-actions-runner.instances."default" = {
+  # services.gitea-actions-runnfur.instances."default" = {
   #   enable = true;
   #   name = "default";
   #   labels = [
