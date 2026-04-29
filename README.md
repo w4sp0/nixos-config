@@ -1,25 +1,4 @@
-<h2 align="center">:snowflake: Ryan4Yin's Nix Config :snowflake:</h2>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="400" />
-</p>
-
-<p align="center">
-	<a href="https://github.com/ryan4yin/nix-config/stargazers">
-		<img alt="Stargazers" src="https://img.shields.io/github/stars/ryan4yin/nix-config?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41"></a>
-    <a href="https://nixos.org/">
-        <img src="https://img.shields.io/badge/NixOS-25.11-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41"></a>
-    <a href="https://github.com/ryan4yin/nixos-and-flakes-book">
-        <img src="https://img.shields.io/badge/Nix%20Flakes-learning-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41"></a>
-  </a>
-</p>
-
-> My configuration is becoming more and more complex, and **it will be difficult for beginners to
-> read**. If you are new to NixOS and want to know how I use NixOS, I would recommend you to take a
-> look at the [ryan4yin/nix-config/releases](https://github.com/ryan4yin/nix-config/releases) first,
-> **check out to some simpler older versions, such as
-> [i3-kickstarter](https://github.com/ryan4yin/nix-config/tree/i3-kickstarter), which will be much
-> easier to understand**.
+# NixOS Configuration
 
 This repository is home to the nix code that builds my systems:
 
@@ -40,17 +19,6 @@ Nix allows for easy-to-manage, collaborative, reproducible deployments. This mea
 something is setup and configured once, it works (almost) forever. If someone else shares their
 configuration, anyone else can just use it (if you really understand what you're copying/referring
 now).
-
-As for Flakes, refer to
-[Introduction to Flakes - NixOS & Nix Flakes Book](https://nixos-and-flakes.thiscute.world/nixos-with-flakes/introduction-to-flakes)
-
-**Want to know NixOS & Flakes in detail? Looking for a beginner-friendly tutorial or best practices?
-You don't have to go through the pain I've experienced again! Check out my
-[NixOS & Nix Flakes Book - 🛠️ ❤️ An unofficial & opinionated :book: for beginners](https://github.com/ryan4yin/nixos-and-flakes-book)!**
-
-> If you're using macOS, check out
-> [ryan4yin/nix-darwin-kickstarter](https://github.com/ryan4yin/nix-darwin-kickstarter) for a quick
-> start.
 
 ## Components
 
@@ -75,19 +43,7 @@ You don't have to go through the pain I've experienced again! Check out my
 | **Filesystem & Encryption**                                    | tmpfs as `/`, [Btrfs][Btrfs] subvolumes on a [LUKS][LUKS] encrypted partition for persistent, unlock via passphrase |
 | **Secure Boot**                                                | [lanzaboote][lanzaboote]                                                                                            |
 
-Wallpapers: https://github.com/ryan4yin/wallpapers
 
-## Screenshots
-
-![desktop](./_img/2026-01-05_niri-noctalia_desktop.webp)
-
-![overview](./_img/2026-01-04_niri-noctalia_overview.webp)
-
-![nvim](./_img/2026-01-04_niri-noctalia_nvim.webp)
-
-## Neovim
-
-See [./home/base/tui/editors/neovim/](./home/base/tui/editors/neovim/) for details.
 
 ## Secrets Management
 

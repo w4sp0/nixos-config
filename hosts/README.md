@@ -12,7 +12,7 @@ Named after characters from "Oshi no Ko":
 
 | Host         | Platform    | Hardware              | Purpose               | Status      |
 | ------------ | ----------- | --------------------- | --------------------- | ----------- |
-| `ai`         | NixOS       | i5-13600KF + RTX 4090 | Gaming & Daily Use    | ✅ Active   |
+| `ai`         | Debian 13   | Virtual               | Local LLMs            | ✅ Active   |
 | `aquamarine` | KubeVirt VM | Virtual               | Monitoring & Services | ✅ Active   |
 | `kana`       | NixOS       | Virtual               | Reserved              | ⚪ Not Used |
 | `ruby`       | NixOS       | Virtual               | Reserved              | ⚪ Not Used |
@@ -23,8 +23,8 @@ Named after characters from "Frieren: Beyond Journey's End":
 
 | Host      | Platform | Hardware                   | Purpose      | Status    |
 | --------- | -------- | -------------------------- | ------------ | --------- |
-| `fern`    | macOS    | MacBook Pro M2 13" 16GB    | Personal Use | ✅ Active |
-| `frieren` | macOS    | MacBook Pro M4Pro 14" 48GB | Work Use     | ✅ Active |
+| `no-macair-work`     | macOS    | MacBook Pro M2 13" 24GB    | Work Use | Active |
+| `pl-macmini-personal` | macOS    | MacMini Pro M1 16GB | Personal Use     |  Active |
 
 #### `12kingdoms` - Homelab Servers & Apple Silicon Linux
 
@@ -32,10 +32,10 @@ Named after "Twelve Kingdoms":
 
 | Host      | Platform | Hardware                               | Purpose                    | Status    |
 | --------- | -------- | -------------------------------------- | -------------------------- | --------- |
-| `shoukei` | NixOS    | MacBook Pro M2                         | NixOS on Apple Silicon     | ✅ Active |
-| `shoryu`  | NixOS    | MoreFine S500Plus (AMD Ryzen 9 5900HX) | KubeVirt Host & K3s Master | ✅ Active |
-| `shushou` | NixOS    | MinisForum UM560 (AMD Ryzen 5 5625U)   | KubeVirt Host & K3s Master | ✅ Active |
-| `youko`   | NixOS    | MinisForum HX99G (AMD Ryzen 9 6900HX)  | KubeVirt Host & K3s Master | ✅ Active |
+| `shoukei` | NixOS    | MacBook Pro M2                         | NixOS on Apple Silicon     | Active |
+| `shoryu`  | NixOS    | MoreFine S500Plus (AMD Ryzen 9 5900HX) | KubeVirt Host & K3s Master | Active |
+| `shushou` | NixOS    | MinisForum UM560 (AMD Ryzen 5 5625U)   | KubeVirt Host & K3s Master | Active |
+| `youko`   | NixOS    | MinisForum HX99G (AMD Ryzen 9 6900HX)  | KubeVirt Host & K3s Master | Active |
 
 ### Virtual Machines & Clusters
 
@@ -45,16 +45,8 @@ Named after "Twelve Kingdoms":
 - **K3s Production**: 3 masters + 3 workers for production workloads
 - **K3s Testing**: 3 masters for testing and development
 
-### External Systems
-
-- **SBCs**: aarch64/riscv64 single-board computers managed in
-  [ryan4yin/nixos-config-sbc](https://github.com/ryan4yin/nixos-config-sbc)
-
-All my riscv64 hosts:
-
-![](/_img/nixos-riscv-cluster.webp)
-
 ## Naming Conventions
+
 
 - **idols**: Characters from "Oshi no Ko" anime/manga
 - **12kingdoms**: Characters from "Twelve Kingdoms" anime/novel series
